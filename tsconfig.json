@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": [
+      "node",
+      "mocha",
+      "meteor-mdg-validated-method",
+      "@types/meteor-collection-hooks",
+      "@types/connect",
+      "testing-library__jest-dom",
+      "@testing-library/jest-dom",
+      "@emotion/react/types/css-prop"
+    ]
+  },
+
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
