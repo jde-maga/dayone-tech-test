@@ -13,7 +13,7 @@ const TodoTask = () => {
   });
   const [updateTodoByStatusId, { loading: mutLoading }] = useMutation(
     UPDATE_TODO_STATUS_BY_ID,
-    { refetchQueries: [GET_TODO_BY_ID, "GetTodoById"] }
+    { refetchQueries: [GET_TODO_BY_ID] }
   );
 
   if (loading || mutLoading) {

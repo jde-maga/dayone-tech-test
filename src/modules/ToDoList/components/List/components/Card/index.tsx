@@ -17,7 +17,7 @@ type Props = {
 const Card = ({ id, title, createdAt, type, isDone }: Props) => {
   const [updateTodoByStatusId, { loading }] = useMutation(
     UPDATE_TODO_STATUS_BY_ID,
-    { refetchQueries: [GET_TODOLIST, "UpdateTodoStatusById"] }
+    { refetchQueries: [GET_TODOLIST] }
   );
 
   const updateIsDone = () => {

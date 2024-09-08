@@ -9,36 +9,36 @@ type Props = {
 
 const Filters = ({ setFilters, filters }: Props) => {
   const onUpdateSort = () => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
+    setFilters({
+      ...filters,
       orderBy:
         !filters.orderBy || filters.orderBy === Ordering.DateDesc
           ? Ordering.DateAsc
           : Ordering.DateDesc,
-    }));
+    });
   };
 
   const onUpdateTypes = (key: TodoTypes, value: boolean) => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
+    setFilters({
+      ...filters,
       types: value
-        ? [...prevState.types, key]
-        : prevState.types.filter((e) => e !== key),
-    }));
+        ? [...filters.types, key]
+        : filters.types.filter((e) => e !== key),
+    });
   };
 
   const onSetBusiness = () => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
+    setFilters({
+      ...filters,
       types: [TodoTypes.Marketing, TodoTypes.Communication],
-    }));
+    });
   };
 
   const onUpdateIsDone = (isDone?: boolean) => {
-    setFilters((prevState: Filter) => ({
-      ...prevState,
+    setFilters({
+      ...filters,
       isDone,
-    }));
+    });
   };
 
   const onResetFilter = () => {

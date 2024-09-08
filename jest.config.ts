@@ -5,6 +5,8 @@ const config: Config.InitialOptions = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  modulePathIgnorePatterns: ["<rootDir>/src/__generated__/"],
+  coveragePathIgnorePatterns: ["<rootDir>/src/__generated__/"],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },

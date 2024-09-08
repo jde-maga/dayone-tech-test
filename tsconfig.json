@@ -10,7 +10,8 @@
       "testing-library__jest-dom",
       "@testing-library/jest-dom",
       "@emotion/react/types/css-prop"
-    ]
+    ],
+    "esModuleInterop": true
   },
 
   "files": [],
