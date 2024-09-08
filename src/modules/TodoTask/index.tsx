@@ -8,7 +8,7 @@ const TodoTask = () => {
   const { todoId } = useParams();
   const { loading, error, data } = useQuery(GET_TODO_BY_ID, {
     variables: {
-      id: todoId || "",
+      id: todoId ?? "",
     },
   });
   const [updateTodoByStatusId, { loading: mutLoading }] = useMutation(

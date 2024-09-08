@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import { Filter } from "../types/Filter";
 
 export const defaultFilters: Filter = {
@@ -21,8 +21,10 @@ type Props = {
 
 const FiltersProvider = ({ children }: Props) => {
   const [filters, setFilters] = useState(defaultFilters);
+  const filterMemo = useMemo(() => ({ filters, setFilters }), [filters]);
+
   return (
-    <FiltersContext.Provider value={{ filters, setFilters }}>
+    <FiltersContext.Provider value={filterMemo}>
       {children}
     </FiltersContext.Provider>
   );
